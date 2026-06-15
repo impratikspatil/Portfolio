@@ -3,55 +3,90 @@ const About = () => {
     <section id="about" className="py-24 px-6 md:px-10">
       <div className="max-w-6xl mx-auto">
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="flex items-center gap-4 mb-12">
+          <span className="font-mono text-[#00d9ff] text-xs">// 01</span>
+          <h2 className="text-2xl md:text-3xl font-bold text-[#e6f0ff]">about_me</h2>
+          <div className="flex-1 h-px bg-[#1e2d3d] max-w-xs" />
+        </div>
 
-          {/* LEFT SIDE */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              About Me
-            </h2>
+        <div className="grid md:grid-cols-5 gap-12 items-start">
 
-            <div className="text-gray-400 space-y-5">
-              <p>
-                Hello! I'm <span className="text-white font-medium">Pratik</span>, a Software Engineer currently working at 
-                <span className="text-[#64ffda]"> PTC</span>.
-              </p>
+          {/* LEFT — 3 cols */}
+          <div className="md:col-span-3 space-y-4 text-[#5a7a9a] text-sm leading-relaxed">
+            <p>
+              Hello! I'm <span className="text-[#e6f0ff] font-medium">Pratik</span>, a
+              backend-focused Software Engineer with{" "}
+              <span className="text-[#e6f0ff]">2+ years of experience</span> designing
+              and shipping production-grade distributed systems at enterprise scale.
+            </p>
+            <p>
+              At <span className="text-[#00d9ff]">PTC</span>, I architected the{" "}
+              <span className="text-[#e6f0ff]">Central Server Manager</span> — an
+              internal developer platform serving 600+ engineers — delivering 30% API
+              performance gains, 40% CI/CD automation improvement, and measurable
+              infrastructure cost reduction.
+            </p>
+            <p>
+              I'm proficient in <span className="text-[#e6f0ff]">Java (Spring Boot)</span>,{" "}
+              <span className="text-[#e6f0ff]">Python (Django)</span>, and{" "}
+              <span className="text-[#e6f0ff]">React</span>, with deep experience in
+              RBAC/LDAP security, Redis-based async processing, and cloud-native
+              engineering on Azure & AWS.
+            </p>
 
-              <p>
-                I specialize in building <span className="text-white">scalable backend systems</span> and 
-                modern web applications using Spring Boot and React. I’ve worked on 
-                optimizing internal tools, improving workflows, and contributing to 
-                production-grade systems used by engineers.
-              </p>
-
-              <p>
-                I enjoy solving real-world problems and building systems that create 
-                measurable impact — especially platforms that improve efficiency 
-                and user experience.
-              </p>
+            <div className="pt-4">
+              <p className="font-mono text-[#00d9ff] text-xs mb-3">// technologies I work with</p>
+              <div className="grid grid-cols-2 gap-2">
+                {[
+                  "Java & Spring Boot",
+                  "Python & Django",
+                  "React & Redux",
+                  "PostgreSQL & MongoDB",
+                  "Redis & Caching",
+                  "Docker & Kubernetes",
+                  "Azure & AWS",
+                  "Jenkins & CI/CD",
+                ].map((tech, i) => (
+                  <div key={i} className="flex items-center gap-2 text-xs text-[#5a7a9a]">
+                    <span className="text-[#00d9ff]">▹</span>{tech}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* RIGHT SIDE (🔥 HIGHLIGHT CARD) */}
-          <div className="bg-[#112240] border border-gray-700 rounded-xl p-6 
-                          hover:border-[#64ffda] transition duration-300">
+          {/* RIGHT — 2 cols */}
+          <div className="md:col-span-2 space-y-4">
 
-            <h3 className="text-xl font-semibold text-[#64ffda] mb-4">
-              🚀 Quick Highlights
-            </h3>
+            <div className="card rounded-xl p-5">
+              <p className="font-mono text-[#00d9ff] text-xs mb-3">// quick_stats</p>
+              {[
+                { k: "company", v: "PTC Software" },
+                { k: "role", v: "Software Engineer" },
+                { k: "exp", v: "2+ years" },
+                { k: "location", v: "Pune, India" },
+                { k: "education", v: "B.E. CS · CGPA 9.0" },
+              ].map(({ k, v }) => (
+                <div key={k} className="flex items-center gap-2 py-1.5 border-b border-[#1e2d3d] last:border-0">
+                  <span className="font-mono text-[#1e2d3d] text-xs w-20 shrink-0">{k}:</span>
+                  <span className="font-mono text-[#e6f0ff] text-xs">{v}</span>
+                </div>
+              ))}
+            </div>
 
-            <ul className="space-y-3 text-gray-400 text-sm">
-              <li>▹ Software Engineer at PTC</li>
-              <li>▹ Built scalable backend systems</li>
-              <li>▹ Worked on tools used by 600+ engineers</li>
-              <li>▹ Strong in Spring Boot & Microservices</li>
-              <li>▹ Experience with CI/CD & DevOps</li>
-            </ul>
+            <div className="card rounded-xl p-5">
+              <p className="font-mono text-[#00d9ff] text-xs mb-3">// achievements</p>
+              <div className="space-y-2 text-xs text-[#5a7a9a]">
+                <p><span className="text-[#00d9ff]">▹</span> Flipkart GRID 4.0 — Top 5% nationally</p>
+                <p><span className="text-[#00d9ff]">▹</span> CodeChef <span className="text-[#e6f0ff]">1680</span></p>
+                <p><span className="text-[#00d9ff]">▹</span> Codeforces <span className="text-[#e6f0ff]">1260</span></p>
+                <p><span className="text-[#00d9ff]">▹</span> <span className="text-[#e6f0ff]">500+</span> DSA problems</p>
+              </div>
+            </div>
 
           </div>
 
         </div>
-
       </div>
     </section>
   );

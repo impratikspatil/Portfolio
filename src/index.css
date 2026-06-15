@@ -1,3 +1,100 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #080e17;
+  color: #e6f0ff;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #080e17; }
+::-webkit-scrollbar-thumb { background: #1e2d3d; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #00d9ff40; }
+
+.dot-grid {
+  background-image: radial-gradient(circle, #1e2d3d 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.text-glow {
+  text-shadow: 0 0 30px #00d9ff60;
+}
+
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #00d9ff;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-delay-1 { animation-delay: 0.1s; opacity: 0; }
+.animate-delay-2 { animation-delay: 0.2s; opacity: 0; }
+.animate-delay-3 { animation-delay: 0.3s; opacity: 0; }
+.animate-delay-4 { animation-delay: 0.4s; opacity: 0; }
+.animate-delay-5 { animation-delay: 0.5s; opacity: 0; }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor {
+  animation: blink 1s infinite;
+}
+
+.card {
+  background: #0f1923;
+  border: 1px solid #1e2d3d;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  border-color: #00d9ff40;
+  box-shadow: 0 8px 32px #00d9ff10;
+  transform: translateY(-2px);
+}
+
+.tag {
+  background: #080e17;
+  border: 1px solid #1e2d3d;
+  color: #5a7a9a;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.tag:hover {
+  border-color: #00d9ff40;
+  color: #00d9ff;
+}
