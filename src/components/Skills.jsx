@@ -1,129 +1,87 @@
+const skillGroups = [
+  {
+    label: "Backend",
+    icon: "⚙️",
+    featured: true,
+    description: "Designing distributed systems, building secure REST APIs, RBAC/LDAP auth, microservices architecture at enterprise scale.",
+    skills: ["Spring Boot", "Spring Security", "Spring Cloud Gateway", "Hibernate/JPA", "Django REST", "Node.js", "Microservices", "REST APIs", "JWT", "OAuth 2.0", "RBAC", "LDAP"],
+  },
+  {
+    label: "Languages",
+    icon: "💻",
+    skills: ["Java", "Python", "TypeScript", "JavaScript", "C++", "SQL"],
+  },
+  {
+    label: "Frontend",
+    icon: "🎨",
+    skills: ["React", "Redux", "Context API", "Angular", "Ant Design", "ApexCharts", "HTML5", "CSS3"],
+  },
+  {
+    label: "Databases",
+    icon: "🗄️",
+    skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis"],
+  },
+  {
+    label: "Cloud & DevOps",
+    icon: "☁️",
+    skills: ["Azure", "AWS", "Docker", "Kubernetes", "Terraform", "Jenkins", "GitLab CI/CD", "Prometheus", "Grafana", "Linux (RHEL)"],
+  },
+  {
+    label: "Platforms",
+    icon: "🧰",
+    skills: ["Backstage (IDP)", "ServiceNow", "Figma", "Firebase", "WATI APIs"],
+  },
+  {
+    label: "Core Concepts",
+    icon: "🧠",
+    skills: ["Distributed Systems", "System Design", "DSA", "OOP", "DBMS", "Event-Driven Architecture", "Async Processing"],
+  },
+];
+
 const Skills = () => {
+  const featured = skillGroups.find((g) => g.featured);
+  const rest = skillGroups.filter((g) => !g.featured);
+
   return (
     <section id="skills" className="py-24 px-6 md:px-10">
       <div className="max-w-6xl mx-auto">
 
-        {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          Skills & Technologies
-        </h2>
+        <div className="flex items-center gap-4 mb-12">
+          <span className="font-mono text-[#00d9ff] text-xs">// 03</span>
+          <h2 className="text-2xl md:text-3xl font-bold text-[#e6f0ff]">skills</h2>
+          <div className="flex-1 h-px bg-[#1e2d3d] max-w-xs" />
+        </div>
 
-        <p className="text-gray-400 mb-16 max-w-2xl">
-          I specialize in building scalable backend systems, designing APIs,
-          and deploying production-grade applications.
-        </p>
-
-        {/* 🔥 HERO SKILL (Backend Focus) */}
-        <div className="bg-[#112240] border border-[#64ffda]/30 rounded-xl p-8 mb-12">
-          
-          <h3 className="text-2xl font-semibold text-[#64ffda] mb-4">
-            ⚙️ Backend Engineering
-          </h3>
-
-          <p className="text-gray-400 mb-6 max-w-3xl">
-            Experienced in designing scalable systems, building REST APIs,
-            implementing authentication, and working with microservices architecture.
-          </p>
-
-          <div className="flex flex-wrap gap-3">
-            {[
-              "Spring Boot",
-              "Spring Security",
-              "Spring Data JPA",
-              "Hibernate",
-              "REST APIs",
-              "Microservices",
-              "JWT",
-              "OAuth2"
-            ].map((skill, i) => (
-              <span
-                key={i}
-                className="px-4 py-2 text-sm bg-[#0a192f] border border-gray-700 rounded-md
-                hover:border-[#64ffda] hover:text-[#64ffda] transition"
-              >
-                {skill}
-              </span>
+        {/* Featured — Backend */}
+        <div className="card rounded-xl p-6 mb-6 border-[#00d9ff20]">
+          <div className="flex items-center gap-2 mb-2">
+            <span>{featured.icon}</span>
+            <span className="font-mono text-[#00d9ff] text-sm font-semibold">{featured.label}</span>
+            <span className="font-mono text-[#1e2d3d] text-xs ml-2">// primary focus</span>
+          </div>
+          <p className="text-[#5a7a9a] text-xs mb-4">{featured.description}</p>
+          <div className="flex flex-wrap gap-2">
+            {featured.skills.map((s, i) => (
+              <span key={i} className="tag hover:border-[#00d9ff40] hover:text-[#00d9ff]">{s}</span>
             ))}
           </div>
         </div>
 
-        {/* 🔥 OTHER SKILLS */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-          {/* Languages */}
-          <div className="bg-[#112240] border border-gray-700 rounded-xl p-6">
-            <h3 className="text-[#64ffda] font-semibold mb-4">💻 Languages</h3>
-            <div className="flex flex-wrap gap-2">
-              {["Java", "Python", "C++", "JavaScript", "SQL"].map((s, i) => (
-                <span key={i} className="text-sm bg-[#0a192f] px-3 py-1 rounded-md">
-                  {s}
-                </span>
-              ))}
+        {/* Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {rest.map((group, i) => (
+            <div key={i} className="card rounded-xl p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-sm">{group.icon}</span>
+                <span className="font-mono text-[#00d9ff] text-xs">{group.label}</span>
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {group.skills.map((s, j) => (
+                  <span key={j} className="tag">{s}</span>
+                ))}
+              </div>
             </div>
-          </div>
-
-          {/* Databases */}
-          <div className="bg-[#112240] border border-gray-700 rounded-xl p-6">
-            <h3 className="text-[#64ffda] font-semibold mb-4">🗄️ Databases</h3>
-            <div className="flex flex-wrap gap-2">
-              {["PostgreSQL", "MongoDB", "MySQL", "MSSQL", "Redis"].map((s, i) => (
-                <span key={i} className="text-sm bg-[#0a192f] px-3 py-1 rounded-md">
-                  {s}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* DevOps */}
-          <div className="bg-[#112240] border border-gray-700 rounded-xl p-6">
-            <h3 className="text-[#64ffda] font-semibold mb-4">☁️ DevOps & Cloud</h3>
-            <div className="flex flex-wrap gap-2">
-              {[
-                "Jenkins",
-                "Docker",
-                "Kubernetes",
-                "Azure",
-                "AWS",
-                "Linux",
-                "Git"
-              ].map((s, i) => (
-                <span key={i} className="text-sm bg-[#0a192f] px-3 py-1 rounded-md">
-                  {s}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Testing */}
-          <div className="bg-[#112240] border border-gray-700 rounded-xl p-6">
-            <h3 className="text-[#64ffda] font-semibold mb-4">🧪 Testing</h3>
-            <div className="flex flex-wrap gap-2">
-              {["Pytest", "unittest", "Postman"].map((s, i) => (
-                <span key={i} className="text-sm bg-[#0a192f] px-3 py-1 rounded-md">
-                  {s}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Core */}
-          <div className="bg-[#112240] border border-gray-700 rounded-xl p-6 col-span-2">
-            <h3 className="text-[#64ffda] font-semibold mb-4">🧠 Core Concepts</h3>
-            <div className="flex flex-wrap gap-2">
-              {[
-                "System Design",
-                "DSA",
-                "Multithreading",
-                "Caching",
-                "API Design"
-              ].map((s, i) => (
-                <span key={i} className="text-sm bg-[#0a192f] px-3 py-1 rounded-md">
-                  {s}
-                </span>
-              ))}
-            </div>
-          </div>
-
+          ))}
         </div>
 
       </div>
