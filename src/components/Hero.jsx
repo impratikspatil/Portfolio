@@ -60,15 +60,15 @@ const Hero = () => {
           </div>
 
           <p className="text-[#5a7a9a] text-sm leading-relaxed max-w-md mb-8 animate-fade-in animate-delay-4">
-            Backend-focused Software Engineer with{" "}
-            <span className="text-[#e6f0ff]">2+ years</span> at{" "}
-            <span className="text-[#00d9ff]">PTC</span>, architecting
-            enterprise-scale distributed systems. Proven track record in
-            RBAC/LDAP, Redis async processing, CI/CD automation, and
-            cloud-native engineering on{" "}
-            <span className="text-[#e6f0ff]">Azure & AWS</span>.
+            Backend & DevOps Engineer with{" "}
+            <span className="text-[#e6f0ff]">3+ years</span> of experience
+            building scalable backend systems and automating cloud-native
+            infrastructure. I design distributed systems and high-volume REST
+            APIs with Java, Spring Boot, and Redis, then ship them with Docker,
+            Kubernetes, Terraform, and Jenkins CI/CD on{" "}
+            <span className="text-[#e6f0ff]">Azure</span>—with observability and
+            security built in.
           </p>
-
           <div className="flex flex-wrap gap-3 animate-fade-in animate-delay-5">
             <a href="#projects"
               className="font-mono text-xs text-[#00d9ff] border border-[#00d9ff] px-6 py-3 rounded hover:bg-[#00d9ff10] transition-all duration-200">
