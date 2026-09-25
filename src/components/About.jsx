@@ -15,36 +15,40 @@ const About = () => {
           <div className="md:col-span-3 space-y-4 text-[#5a7a9a] text-sm leading-relaxed">
             <p>
               Hello! I'm <span className="text-[#e6f0ff] font-medium">Pratik</span>, a
-              backend-focused Software Engineer with{" "}
-              <span className="text-[#e6f0ff]">2+ years of experience</span> designing
-              and shipping production-grade distributed systems at enterprise scale.
+              <span className="text-[#e6f0ff]"> Backend & DevOps Engineer</span> with{" "}
+              <span className="text-[#e6f0ff]">3+ years of experience</span> building
+              scalable backend systems and cloud-native infrastructure.
             </p>
+
             <p>
-              At <span className="text-[#00d9ff]">PTC</span>, I architected the{" "}
-              <span className="text-[#e6f0ff]">Central Server Manager</span> — an
-              internal developer platform serving 600+ engineers — delivering 30% API
-              performance gains, 40% CI/CD automation improvement, and measurable
-              infrastructure cost reduction.
+              At <span className="text-[#00d9ff]">PTC</span>, I work across backend
+              engineering and DevOps — building the{" "}
+              <span className="text-[#e6f0ff]">Central Server Manager</span> used by
+              600+ engineers, while also working on CI/CD, Kubernetes, Azure
+              infrastructure, automation, and production deployments.
             </p>
+
             <p>
-              I'm proficient in <span className="text-[#e6f0ff]">Java (Spring Boot)</span>,{" "}
-              <span className="text-[#e6f0ff]">Python (Django)</span>, and{" "}
-              <span className="text-[#e6f0ff]">React</span>, with deep experience in
-              RBAC/LDAP security, Redis-based async processing, and cloud-native
-              engineering on Azure & AWS.
+              My core stack includes <span className="text-[#e6f0ff]">Java,
+              Spring Boot, Python, Redis, Kubernetes, Docker, Terraform, Jenkins,
+              and Azure</span>, with experience in distributed systems, REST APIs,
+              cloud automation, observability, security, and CI/CD.
             </p>
 
             <div className="pt-4">
-              <p className="font-mono text-[#00d9ff] text-xs mb-3">// technologies I work with</p>
+              <p className="font-mono text-[#00d9ff] text-xs mb-3">
+                // technologies I work with
+              </p>
+
               <div className="grid grid-cols-2 gap-2">
                 {[
                   "Java & Spring Boot",
                   "Python & Django",
-                  "React & Redux",
+                  "REST APIs & Microservices",
                   "PostgreSQL & MongoDB",
                   "Redis & Caching",
                   "Docker & Kubernetes",
-                  "Azure & AWS",
+                  "Azure & Terraform",
                   "Jenkins & CI/CD",
                 ].map((tech, i) => (
                   <div key={i} className="flex items-center gap-2 text-xs text-[#5a7a9a]">
