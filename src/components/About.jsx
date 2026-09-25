@@ -67,7 +67,7 @@ const About = () => {
               {[
                 { k: "company", v: "PTC Software" },
                 { k: "role", v: "Software Engineer" },
-                { k: "exp", v: "2+ years" },
+                { k: "exp", v: "3+ years" },
                 { k: "location", v: "Pune, India" },
                 { k: "education", v: "B.E. CS · CGPA 9.0" },
               ].map(({ k, v }) => (

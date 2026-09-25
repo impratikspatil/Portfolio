@@ -5,7 +5,6 @@ const Footer = () => {
 
         <div className="font-mono text-xs text-[#1e2d3d]">
           <span className="text-[#00d9ff]">pratik</span>.patil © {new Date().getFullYear()}
-          <span className="ml-2">// built with React & Tailwind</span>
         </div>
 
         <div className="flex items-center gap-6">
